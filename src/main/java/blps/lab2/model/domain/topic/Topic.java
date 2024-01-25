@@ -1,7 +1,6 @@
 package blps.lab2.model.domain.topic;
 
 import blps.lab2.model.domain.user.User;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 

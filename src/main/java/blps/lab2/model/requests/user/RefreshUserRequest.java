@@ -1,6 +1,5 @@
 package blps.lab2.model.requests.user;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

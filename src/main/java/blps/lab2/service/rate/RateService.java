@@ -1,13 +1,12 @@
 package blps.lab2.service.rate;
 
-import blps.lab2.controller.exceptions.NoAvailableGradesException;
+import blps.lab2.exceptions.NoAvailableGradesException;
 import blps.lab2.dao.TopicRepository;
 import blps.lab2.dao.UserRepository;
 import blps.lab2.model.domain.topic.Topic;
 import blps.lab2.model.domain.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import java.util.Optional;

@@ -1,6 +1,5 @@
 package blps.lab2.model.requests.topic;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
