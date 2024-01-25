@@ -1,6 +1,6 @@
 package blps.lab2.security;
 
-import blps.lab2.controller.exceptions.AuthenticationFailException;
+import blps.lab2.exceptions.AuthenticationFailException;
 import blps.lab2.model.domain.user.User;
 import blps.lab2.model.responses.ErrorResponse;
 import blps.lab2.service.user.JwtService;

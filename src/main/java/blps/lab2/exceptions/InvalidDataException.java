@@ -1,4 +1,4 @@
-package blps.lab2.controller.exceptions;
+package blps.lab2.exceptions;
 
 public class InvalidDataException extends RuntimeException {
     public InvalidDataException(){}

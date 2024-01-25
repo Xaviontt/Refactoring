@@ -1,6 +1,5 @@
 package blps.lab2.controller.enums;
 
-
 import blps.lab2.model.domain.topic.TopicCategory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

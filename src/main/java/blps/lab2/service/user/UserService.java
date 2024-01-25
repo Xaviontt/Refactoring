@@ -1,9 +1,7 @@
 package blps.lab2.service.user;
 
-import blps.lab2.controller.exceptions.AlreadyExistException;
-import blps.lab2.controller.exceptions.InvalidDataException;
+import blps.lab2.exceptions.AlreadyExistException;
 import blps.lab2.dao.UserRepository;
-import blps.lab2.model.domain.topic.Topic;
 import blps.lab2.model.domain.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
