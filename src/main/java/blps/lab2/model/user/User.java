@@ -1,6 +1,6 @@
-package blps.lab2.model.domain.user;
+package blps.lab2.model.user;
 
-import blps.lab2.model.domain.topic.Topic;
+import blps.lab2.model.topic.Topic;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,7 +1,7 @@
-package blps.lab2.model.responses.topic;
+package blps.lab2.dto.responses.topic;
 
-import blps.lab2.model.domain.topic.Topic;
-import blps.lab2.model.domain.topic.TopicCategory;
+import blps.lab2.model.topic.Topic;
+import blps.lab2.model.topic.TopicCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

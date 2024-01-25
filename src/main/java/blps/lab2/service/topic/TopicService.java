@@ -1,12 +1,11 @@
 package blps.lab2.service.topic;
 
-import blps.lab2.model.domain.topic.Topic;
 import blps.lab2.dao.TopicRepository;
-import blps.lab2.model.domain.topic.TopicCategory;
-import blps.lab2.model.requests.topic.CreateTopicRequest;
-import blps.lab2.model.responses.topic.TopicView;
-import blps.lab2.model.responses.topic.TopicViewPage;
-import org.springframework.beans.factory.annotation.Autowired;
+import blps.lab2.dto.requests.topic.CreateTopicRequest;
+import blps.lab2.dto.responses.topic.TopicView;
+import blps.lab2.dto.responses.topic.TopicViewPage;
+import blps.lab2.model.topic.Topic;
+import blps.lab2.model.topic.TopicCategory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,7 +19,7 @@ import java.util.Optional;
 @Service
 public class TopicService {
     private final TopicRepository topicRepository;
-    @Autowired
+
     public TopicService(TopicRepository topicRepository) {
         this.topicRepository = topicRepository;
     }
@@ -80,8 +79,7 @@ public class TopicService {
         Page<Topic> pageableTopics;
         if (category.isPresent()) {
             pageableTopics = topicRepository.findByCategoryAndQuery(category.get(), query, pageable);
-        }
-        else {
+        } else {
             pageableTopics = query.isEmpty()
                     ? topicRepository.findAll(pageable)
                     : topicRepository.findByQuery(query, pageable);
@@ -89,7 +87,8 @@ public class TopicService {
 
         List<TopicView> topicViews = pageableTopics.getContent().stream().map(TopicView::fromTopic).toList();
 
-        return new TopicViewPage(topicViews,
+        return new TopicViewPage(
+                topicViews,
                 pageableTopics.getNumber(),
                 pageableTopics.getSize(),
                 pageableTopics.getTotalElements(),

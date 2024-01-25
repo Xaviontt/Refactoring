@@ -1,13 +1,13 @@
 package blps.lab2.service.user;
 
+import blps.lab2.dto.requests.user.AuthUserRequest;
+import blps.lab2.dto.requests.user.RefreshUserRequest;
+import blps.lab2.dto.responses.user.AuthUserResponse;
 import blps.lab2.exceptions.AuthenticationFailException;
 import blps.lab2.exceptions.InternalServerException;
 import blps.lab2.exceptions.InvalidDataException;
-import blps.lab2.model.domain.user.User;
-import blps.lab2.model.domain.user.UserRole;
-import blps.lab2.model.requests.user.AuthUserRequest;
-import blps.lab2.model.requests.user.RefreshUserRequest;
-import blps.lab2.model.responses.user.AuthUserResponse;
+import blps.lab2.model.user.User;
+import blps.lab2.model.user.UserRole;
 import blps.lab2.utils.DateUtils;
 import com.nimbusds.jose.JOSEException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,11 @@ public class AuthService {
     private Long refreshExpiresIn;
 
     @Autowired
-    public AuthService(JwtService jwtService, UserService userService, PasswordService passwordService) {
+    public AuthService(
+            JwtService jwtService,
+            UserService userService,
+            PasswordService passwordService
+    ) {
         this.jwtService = jwtService;
         this.userService = userService;
         this.passwordService = passwordService;

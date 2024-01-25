@@ -1,7 +1,7 @@
 package blps.lab2.controller;
 
+import blps.lab2.dto.responses.ErrorResponse;
 import blps.lab2.exceptions.*;
-import blps.lab2.model.responses.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class ExceptionsHandler {
-    @ExceptionHandler
-    public ResponseEntity<ErrorResponse> handleAlreadyExistException(AlreadyExistException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(e.getMessage()));
+    @ExceptionHandler({AlreadyExistException.class, InvalidDataException.class, NoAvailableGradesException.class})
+    public ResponseEntity<ErrorResponse> handleBadRequestExceptions(Exception e) {
+        return ResponseEntity.badRequest().body(new ErrorResponse(e.getMessage()));
     }
 
     @ExceptionHandler
@@ -20,17 +20,7 @@ public class ExceptionsHandler {
     }
 
     @ExceptionHandler
-    public ResponseEntity<ErrorResponse> handleInvalidDataException(InvalidDataException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(e.getMessage()));
-    }
-
-    @ExceptionHandler
     public ResponseEntity<ErrorResponse> handleInternalServerException(InternalServerException e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(e.getMessage()));
-    }
-
-    @ExceptionHandler
-    public ResponseEntity<ErrorResponse> handleNoAvailableGradesException(NoAvailableGradesException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(e.getMessage()));
+        return ResponseEntity.internalServerError().body(new ErrorResponse(e.getMessage()));
     }
 }

@@ -1,6 +1,6 @@
 package blps.lab2.dao;
 
-import blps.lab2.model.domain.user.User;
+import blps.lab2.model.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
