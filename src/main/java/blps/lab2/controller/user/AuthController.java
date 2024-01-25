@@ -1,13 +1,11 @@
 package blps.lab2.controller.user;
 
 import blps.lab2.model.domain.user.User;
-import blps.lab2.model.domain.user.UserRole;
 import blps.lab2.model.requests.user.AuthUserRequest;
 import blps.lab2.model.requests.user.RefreshUserRequest;
 import blps.lab2.model.responses.user.AuthUserResponse;
 import blps.lab2.model.responses.user.UserView;
 import blps.lab2.service.user.AuthService;
-import blps.lab2.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,8 +1,8 @@
 package blps.lab2.service.user;
 
-import blps.lab2.controller.exceptions.AuthenticationFailException;
-import blps.lab2.controller.exceptions.InternalServerException;
-import blps.lab2.controller.exceptions.InvalidDataException;
+import blps.lab2.exceptions.AuthenticationFailException;
+import blps.lab2.exceptions.InternalServerException;
+import blps.lab2.exceptions.InvalidDataException;
 import blps.lab2.model.domain.user.User;
 import blps.lab2.model.domain.user.UserRole;
 import blps.lab2.model.requests.user.AuthUserRequest;
@@ -14,9 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 

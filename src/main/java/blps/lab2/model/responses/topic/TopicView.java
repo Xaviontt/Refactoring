@@ -3,7 +3,6 @@ package blps.lab2.model.responses.topic;
 import blps.lab2.model.domain.topic.Topic;
 import blps.lab2.model.domain.topic.TopicCategory;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
