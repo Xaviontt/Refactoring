@@ -2,7 +2,6 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.8'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-	id 'war'
 }
 
 group = 'blps'
@@ -23,13 +22,11 @@ dependencies {
 	implementation 'com.nimbusds:nimbus-jose-jwt:9.25.6'
 
 	compileOnly 'org.projectlombok:lombok:1.18.26'
-	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
 	annotationProcessor 'org.projectlombok:lombok:1.18.26'
 
 	runtimeOnly 'org.postgresql:postgresql'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
 
 tasks.named('test') {
