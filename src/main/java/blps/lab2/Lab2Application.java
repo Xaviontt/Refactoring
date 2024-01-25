@@ -7,10 +7,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 @SpringBootApplication
 public class Lab2Application extends SpringBootServletInitializer {
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(Lab2Application.class);
-	}
 	public static void main(String[] args) {
 		SpringApplication.run(Lab2Application.class, args);
 	}
