@@ -1,4 +1,4 @@
-package blps.lab2.model.requests.user;
+package blps.lab2.dto.requests.user;
 
 import lombok.Getter;
 import lombok.Setter;

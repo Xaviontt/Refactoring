@@ -1,12 +1,10 @@
 package blps.lab2.controller.user;
 
-import blps.lab2.model.domain.user.User;
-import blps.lab2.model.requests.user.AuthUserRequest;
-import blps.lab2.model.requests.user.RefreshUserRequest;
-import blps.lab2.model.responses.user.AuthUserResponse;
-import blps.lab2.model.responses.user.UserView;
+import blps.lab2.dto.requests.user.AuthUserRequest;
+import blps.lab2.dto.requests.user.RefreshUserRequest;
+import blps.lab2.dto.responses.user.AuthUserResponse;
+import blps.lab2.dto.responses.user.UserView;
 import blps.lab2.service.user.AuthService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,18 +14,17 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/v1/auth")
+@RequestMapping("/api/v1/auth")
 public class AuthController {
-    private AuthService authService;
-    @Autowired
+    private final AuthService authService;
+
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
 
     @PostMapping("/register")
     public UserView register(@RequestBody @Valid AuthUserRequest req) {
-        User user = authService.register(req);
-        return UserView.fromUser(user);
+        return UserView.fromUser(authService.register(req));
     }
 
     @PostMapping("/login")

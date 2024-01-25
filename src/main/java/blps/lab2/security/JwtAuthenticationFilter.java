@@ -1,13 +1,12 @@
 package blps.lab2.security;
 
 import blps.lab2.exceptions.AuthenticationFailException;
-import blps.lab2.model.domain.user.User;
-import blps.lab2.model.responses.ErrorResponse;
+import blps.lab2.model.user.User;
+import blps.lab2.dto.responses.ErrorResponse;
 import blps.lab2.service.user.JwtService;
 import blps.lab2.service.user.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nimbusds.jose.JOSEException;
-import lombok.RequiredArgsConstructor;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -27,11 +26,20 @@ import java.util.Map;
 import java.util.Optional;
 
 @Component
-@RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private final UserService userService;
     private final ObjectMapper objectMapper;
+
+    public JwtAuthenticationFilter(
+            JwtService jwtService,
+            UserService userService,
+            ObjectMapper objectMapper
+    ) {
+        this.jwtService = jwtService;
+        this.userService = userService;
+        this.objectMapper = objectMapper;
+    }
 
     @Override
     protected void doFilterInternal(

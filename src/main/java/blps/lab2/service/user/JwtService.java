@@ -1,7 +1,7 @@
 package blps.lab2.service.user;
 
 import blps.lab2.exceptions.AuthenticationFailException;
-import blps.lab2.model.domain.user.User;
+import blps.lab2.model.user.User;
 import blps.lab2.utils.DateUtils;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;

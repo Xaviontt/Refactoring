@@ -1,9 +1,8 @@
 package blps.lab2.service.user;
 
-import blps.lab2.exceptions.AlreadyExistException;
 import blps.lab2.dao.UserRepository;
-import blps.lab2.model.domain.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import blps.lab2.exceptions.AlreadyExistException;
+import blps.lab2.model.user.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -11,7 +10,7 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-    @Autowired
+
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

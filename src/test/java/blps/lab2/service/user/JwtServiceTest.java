@@ -1,7 +1,7 @@
 package blps.lab2.service.user;
 
-import blps.lab2.model.domain.user.User;
-import blps.lab2.model.domain.user.UserRole;
+import blps.lab2.model.user.User;
+import blps.lab2.model.user.UserRole;
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSVerifier;
 import com.nimbusds.jose.crypto.MACVerifier;

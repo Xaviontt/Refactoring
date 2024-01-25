@@ -1,4 +1,4 @@
-package blps.lab2.model.domain.user;
+package blps.lab2.model.user;
 
 public enum UserRole {
     USER,

@@ -1,7 +1,7 @@
-package blps.lab2.model.responses.user;
+package blps.lab2.dto.responses.user;
 
-import blps.lab2.model.domain.user.User;
-import blps.lab2.model.domain.user.UserRole;
+import blps.lab2.model.user.User;
+import blps.lab2.model.user.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

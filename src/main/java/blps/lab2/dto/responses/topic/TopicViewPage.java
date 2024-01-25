@@ -1,4 +1,4 @@
-package blps.lab2.model.responses.topic;
+package blps.lab2.dto.responses.topic;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -16,7 +16,7 @@ spring:
 application:
   security:
     jwt:
-      secret: kvKHL5jkO4wrWWzyH+2fEhOnBp/a9nvwDD2XTE8GFmE=
-      accessExpiresIn: 900
-      refreshExpiresIn: 86400
+      secret: ${JWT_SECRET}
+      accessExpiresIn: ${JWT_ACCESS_EXPIRE}
+      refreshExpiresIn: ${JWT_REFRESH_EXPIRE}
 

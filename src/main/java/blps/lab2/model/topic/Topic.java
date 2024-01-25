@@ -1,8 +1,10 @@
-package blps.lab2.model.domain.topic;
+package blps.lab2.model.topic;
 
-import blps.lab2.model.domain.user.User;
+import blps.lab2.model.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -29,8 +31,16 @@ public class Topic {
     private User user;
 
 
-    public Topic(String title, String description, String content, TopicCategory category,
-                 Date createdAt, Date updatedAt, Integer rate, User user) {
+    public Topic(
+            String title,
+            String description,
+            String content,
+            TopicCategory category,
+            Date createdAt,
+            Date updatedAt,
+            Integer rate,
+            User user
+    ) {
         this.title = title;
         this.description = description;
         this.content = content;
